@@ -244,12 +244,30 @@ p {
 }
 
 .logo {
-  font-weight: 700;
-  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.logo span {
-  color: var(--accent);
+.logo-img {
+  display: block;
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+.hero-logo {
+  display: block;
+  margin-bottom: var(--space-3);
+  line-height: 0;
+}
+
+.hero-logo-img {
+  display: block;
+  max-height: 56px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -680,6 +698,20 @@ button:focus {
 @media (min-width: 960px) {
   .hero-content {
     grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .hero-logo-img {
+    max-height: 72px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    height: 28px;
+  }
+
+  .hero-logo-img {
+    max-height: 48px;
   }
 }
 
