@@ -10,17 +10,22 @@ const modalTitle = document.getElementById('modalTitle');
 const modalDescription = document.getElementById('modalDescription');
 const modalList = document.getElementById('modalList');
 const modalClose = document.querySelector('.modal-close');
+const modalContent = document.querySelector('.modal-content');
 const toast = document.getElementById('toast');
 const form = document.getElementById('contactForm');
 const year = document.getElementById('year');
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const focusableSelectors = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+let lastFocusedElement = null;
+let trapHandler = null;
 
 const updateTheme = (theme) => {
   document.documentElement.setAttribute('data-theme', theme);
   const isLight = theme === 'light';
   themeLabel.textContent = isLight ? 'Light' : 'Dark';
   themeIcon.textContent = isLight ? '☀' : '☾';
+  themeToggle.setAttribute('aria-pressed', String(isLight));
   localStorage.setItem('theme', theme);
 };
 
@@ -32,15 +37,20 @@ themeToggle.addEventListener('click', () => {
   updateTheme(current === 'light' ? 'dark' : 'light');
 });
 
-navToggle.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
+const setNavState = (isOpen) => {
+  navLinks.classList.toggle('open', isOpen);
   navToggle.setAttribute('aria-expanded', String(isOpen));
+  navToggle.setAttribute('aria-label', isOpen ? 'Stäng meny' : 'Öppna meny');
+};
+
+navToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.contains('open');
+  setNavState(!isOpen);
 });
 
 navItems.forEach((link) => {
   link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
+    setNavState(false);
   });
 });
 
@@ -61,7 +71,38 @@ const setActiveLink = () => {
 window.addEventListener('scroll', setActiveLink, { passive: true });
 setActiveLink();
 
+const isModalOpen = () => modal.classList.contains('open');
+
+const getFocusableElements = () => {
+  if (!modalContent) {
+    return [];
+  }
+  return [...modalContent.querySelectorAll(focusableSelectors)].filter((el) => !el.hasAttribute('disabled'));
+};
+
+const trapFocus = (event) => {
+  if (event.key !== 'Tab') {
+    return;
+  }
+  const focusable = getFocusableElements();
+  if (focusable.length === 0) {
+    return;
+  }
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+    return;
+  }
+  if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+};
+
 const openModal = (card) => {
+  lastFocusedElement = document.activeElement;
   modalTitle.textContent = card.dataset.title;
   modalDescription.textContent = card.dataset.description;
   modalList.innerHTML = '';
@@ -72,12 +113,31 @@ const openModal = (card) => {
   });
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
-  modalClose.focus();
+  document.body.classList.add('modal-open');
+  const focusable = getFocusableElements();
+  if (trapHandler) {
+    modal.removeEventListener('keydown', trapHandler);
+  }
+  trapHandler = trapFocus;
+  modal.addEventListener('keydown', trapHandler);
+  (focusable[0] || modalClose).focus();
 };
 
 const closeModal = () => {
+  if (!isModalOpen()) {
+    return;
+  }
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+  if (trapHandler) {
+    modal.removeEventListener('keydown', trapHandler);
+    trapHandler = null;
+  }
+  if (lastFocusedElement && document.body.contains(lastFocusedElement)) {
+    lastFocusedElement.focus();
+  }
+  lastFocusedElement = null;
 };
 
 document.querySelectorAll('.service-card').forEach((card) => {
@@ -91,7 +151,7 @@ modal.addEventListener('click', (event) => {
 });
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
+  if (event.key === 'Escape' && isModalOpen()) {
     closeModal();
   }
 });
