@@ -8,6 +8,7 @@ const navItems = [...document.querySelectorAll('.nav-links a')];
 const modal = document.getElementById('serviceModal');
 const modalTitle = document.getElementById('modalTitle');
 const modalDescription = document.getElementById('modalDescription');
+const modalListLabel = document.getElementById('modalListLabel');
 const modalList = document.getElementById('modalList');
 const modalClose = document.querySelector('.modal-close');
 const modalContent = document.querySelector('.modal-content');
@@ -103,14 +104,23 @@ const trapFocus = (event) => {
 
 const openModal = (card) => {
   lastFocusedElement = document.activeElement;
-  modalTitle.textContent = card.dataset.title;
-  modalDescription.textContent = card.dataset.description;
+  const detailTitle = card.dataset.detailsTitle || card.dataset.title;
+  const detailBody = card.dataset.detailsBody || card.dataset.description;
+  const detailList = (card.dataset.detailsList || card.dataset.bullets || '')
+    .split('|')
+    .map((item) => item.trim())
+    .filter(Boolean);
+  modalTitle.textContent = detailTitle;
+  modalDescription.textContent = detailBody;
   modalList.innerHTML = '';
-  card.dataset.bullets.split('|').forEach((item) => {
+  detailList.forEach((item) => {
     const li = document.createElement('li');
     li.textContent = item;
     modalList.appendChild(li);
   });
+  if (modalListLabel) {
+    modalListLabel.hidden = detailList.length === 0;
+  }
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
   document.body.classList.add('modal-open');
