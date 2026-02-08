@@ -23,17 +23,17 @@
   <header class="site-header" id="top">
     <nav class="navbar">
       <a class="logo" href="#top" aria-label="Nimab Development hem">Nimab<span>Development</span></a>
-      <button class="nav-toggle" type="button" aria-label="Öppna meny" aria-expanded="false">
+      <button class="nav-toggle" type="button" aria-label="Öppna meny" aria-expanded="false" aria-controls="primary-navigation">
         <span></span><span></span><span></span>
       </button>
-      <div class="nav-links" data-nav>
+      <div class="nav-links" id="primary-navigation" data-nav>
         <a href="#services">Tjänster</a>
         <a href="#process">Process</a>
         <a href="#cases">Case</a>
         <a href="#about">Om</a>
         <a href="#contact">Kontakt</a>
       </div>
-      <button class="theme-toggle" type="button" aria-label="Växla tema">
+      <button class="theme-toggle" type="button" aria-label="Växla tema" aria-pressed="false">
         <span class="theme-icon" aria-hidden="true">☾</span>
         <span class="theme-label">Dark</span>
       </button>
@@ -352,7 +352,7 @@
     <div class="footer-meta">© <span id="year"></span> Nimab Development</div>
   </footer>
 
-  <div class="modal" id="serviceModal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal" id="serviceModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
     <div class="modal-content" role="document">
       <button class="modal-close" type="button" aria-label="Stäng">×</button>
       <h3 id="modalTitle"></h3>
