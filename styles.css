@@ -422,15 +422,21 @@ p {
   padding: var(--space-4);
   text-align: left;
   cursor: pointer;
-  transition: transform var(--transition), box-shadow var(--transition), border var(--transition);
-  will-change: transform;
-  transform: translateZ(0);
+  transition: margin var(--transition), box-shadow var(--transition), border var(--transition);
 }
 
 .service-card:hover {
-  transform: translateY(-4px) translateZ(0);
+  margin-top: -4px;
+  margin-bottom: 4px;
   box-shadow: 0 18px 40px rgba(76, 201, 240, 0.12);
   border-color: rgba(76, 201, 240, 0.4);
+}
+
+.service-card h3,
+.service-card p,
+.service-card ul {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .service-card ul {
