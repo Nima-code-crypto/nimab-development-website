@@ -1,5 +1,20 @@
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
+const scrollToTopOnLoad = () => {
+  window.scrollTo(0, 0);
+};
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', scrollToTopOnLoad);
+} else {
+  scrollToTopOnLoad();
+}
+
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('[data-nav]');
+const navLogo = document.querySelector('.navbar .logo');
 const sections = [...document.querySelectorAll('main section')];
 const navItems = [...document.querySelectorAll('.nav-links a')];
 const modal = document.getElementById('serviceModal');
@@ -12,6 +27,13 @@ const form = document.getElementById('contactForm');
 const year = document.getElementById('year');
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (navLogo) {
+  navLogo.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  });
+}
 
 navToggle.addEventListener('click', () => {
   const isOpen = navLinks.classList.toggle('open');
