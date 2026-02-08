@@ -125,7 +125,7 @@ if (!prefersReducedMotion) {
     },
     { threshold: 0.2 }
   );
-
+//test test test test test
   document.querySelectorAll('.section, .service-card, .process-card, .case-card, .tech-card, .about-card').forEach((el) => {
     el.classList.add('reveal');
     observer.observe(el);
