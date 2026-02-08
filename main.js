@@ -135,7 +135,7 @@ if (!prefersReducedMotion) {
     },
     { threshold: 0.2 }
   );
-  document.querySelectorAll('.section, .service-card, .process-card, .case-card, .tech-card, .about-card').forEach((el) => {
+  document.querySelectorAll('.section, .service-card, .process-card, .case-card, .tech-cluster, .about-card').forEach((el) => {
     el.classList.add('reveal');
     observer.observe(el);
   });

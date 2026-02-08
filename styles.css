@@ -467,7 +467,6 @@ p {
 
 .process-card,
 .case-card,
-.tech-card,
 .about-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -499,8 +498,7 @@ p {
   margin: var(--space-3) 0;
 }
 
-.chips span,
-.tech-card {
+.chips span {
   padding: 6px 12px;
   border-radius: 999px;
   background: rgba(148, 163, 184, 0.12);
@@ -509,8 +507,56 @@ p {
   color: var(--text);
 }
 
-.tech-grid {
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+.tech-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.tech-cluster {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tech-cluster__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.tech-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.tech-item {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.9rem;
+  color: var(--text);
+  transition: background var(--transition);
+}
+
+.tech-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.tech-item--primary {
+  padding: 12px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(76, 201, 240, 0.1);
+}
+
+.tech-item--primary:hover {
+  background: rgba(76, 201, 240, 0.16);
 }
 
 .about-grid {
