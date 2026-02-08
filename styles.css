@@ -186,6 +186,7 @@ p {
 .btn.primary {
   background: linear-gradient(120deg, var(--accent), var(--accent-3));
   color: #fff;
+  border: none;
   box-shadow: 0 12px 30px rgba(76, 201, 240, 0.2);
 }
 
