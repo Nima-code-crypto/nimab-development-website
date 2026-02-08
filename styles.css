@@ -416,18 +416,34 @@ p {
 }
 
 .service-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  position: relative;
+  background: transparent;
+  border: none;
   border-radius: var(--radius-md);
   padding: var(--space-4);
   text-align: left;
   cursor: pointer;
-  transition: margin var(--transition), box-shadow var(--transition), border var(--transition);
+  transition: margin var(--transition);
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
 .service-card:hover {
   margin-top: -4px;
   margin-bottom: 4px;
+}
+
+.service-card:hover::before {
+  transform: scale(1.02);
   box-shadow: 0 18px 40px rgba(76, 201, 240, 0.12);
   border-color: rgba(76, 201, 240, 0.4);
 }
@@ -788,5 +804,9 @@ button:focus {
   * {
     transition: none !important;
     animation: none !important;
+  }
+
+  .service-card:hover::before {
+    transform: none;
   }
 }
