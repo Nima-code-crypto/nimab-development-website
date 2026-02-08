@@ -1,8 +1,5 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('[data-nav]');
-const themeToggle = document.querySelector('.theme-toggle');
-const themeLabel = document.querySelector('.theme-label');
-const themeIcon = document.querySelector('.theme-icon');
 const sections = [...document.querySelectorAll('main section')];
 const navItems = [...document.querySelectorAll('.nav-links a')];
 const modal = document.getElementById('serviceModal');
@@ -15,22 +12,6 @@ const form = document.getElementById('contactForm');
 const year = document.getElementById('year');
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-const updateTheme = (theme) => {
-  document.documentElement.setAttribute('data-theme', theme);
-  const isLight = theme === 'light';
-  themeLabel.textContent = isLight ? 'Light' : 'Dark';
-  themeIcon.textContent = isLight ? '☀' : '☾';
-  localStorage.setItem('theme', theme);
-};
-
-const storedTheme = localStorage.getItem('theme');
-updateTheme(storedTheme || 'dark');
-
-themeToggle.addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-theme');
-  updateTheme(current === 'light' ? 'dark' : 'light');
-});
 
 navToggle.addEventListener('click', () => {
   const isOpen = navLinks.classList.toggle('open');
@@ -125,7 +106,6 @@ if (!prefersReducedMotion) {
     },
     { threshold: 0.2 }
   );
-//test test test test test
   document.querySelectorAll('.section, .service-card, .process-card, .case-card, .tech-card, .about-card').forEach((el) => {
     el.classList.add('reveal');
     observer.observe(el);
