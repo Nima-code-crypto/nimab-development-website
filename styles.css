@@ -171,6 +171,16 @@ p {
   font-weight: 600;
   transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border var(--transition);
   cursor: pointer;
+  overflow: visible;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
 }
 
 .btn.primary {
@@ -186,6 +196,10 @@ p {
 
 .btn.primary:active {
   transform: translateY(0);
+}
+
+.btn.primary:focus-visible {
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent), 0 12px 30px rgba(76, 201, 240, 0.2);
 }
 
 .btn.ghost {
