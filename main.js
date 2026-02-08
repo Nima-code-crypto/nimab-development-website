@@ -20,6 +20,7 @@ const navItems = [...document.querySelectorAll('.nav-links a')];
 const modal = document.getElementById('serviceModal');
 const modalTitle = document.getElementById('modalTitle');
 const modalDescription = document.getElementById('modalDescription');
+const modalDeliveriesWrap = document.getElementById('modalDeliveriesWrap');
 const modalList = document.getElementById('modalList');
 const modalClose = document.querySelector('.modal-close');
 const toast = document.getElementById('toast');
@@ -65,14 +66,20 @@ window.addEventListener('scroll', setActiveLink, { passive: true });
 setActiveLink();
 
 const openModal = (card) => {
-  modalTitle.textContent = card.dataset.title;
-  modalDescription.textContent = card.dataset.description;
+  modalTitle.textContent = card.dataset.modalTitle || card.dataset.title;
+  modalDescription.textContent = card.dataset.expanded || '';
   modalList.innerHTML = '';
-  card.dataset.bullets.split('|').forEach((item) => {
-    const li = document.createElement('li');
-    li.textContent = item;
-    modalList.appendChild(li);
-  });
+  const deliveries = card.dataset.deliveries;
+  if (deliveries && deliveries.trim()) {
+    deliveries.split('|').forEach((item) => {
+      const li = document.createElement('li');
+      li.textContent = item.trim();
+      modalList.appendChild(li);
+    });
+    modalDeliveriesWrap.hidden = false;
+  } else {
+    modalDeliveriesWrap.hidden = true;
+  }
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
   modalClose.focus();

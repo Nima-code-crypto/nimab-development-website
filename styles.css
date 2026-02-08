@@ -423,10 +423,12 @@ p {
   text-align: left;
   cursor: pointer;
   transition: transform var(--transition), box-shadow var(--transition), border var(--transition);
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .service-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) translateZ(0);
   box-shadow: 0 18px 40px rgba(76, 201, 240, 0.12);
   border-color: rgba(76, 201, 240, 0.4);
 }
@@ -658,6 +660,27 @@ button:focus {
   font-size: 1.5rem;
   float: right;
   cursor: pointer;
+}
+
+.modal-expanded-text {
+  margin-top: var(--space-2);
+  color: var(--text-muted);
+}
+
+.modal-deliveries {
+  margin-top: var(--space-4);
+}
+
+.modal-deliveries-title {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: var(--space-2);
+}
+
+.modal-deliveries ul {
+  padding-left: var(--space-3);
+  color: var(--text-muted);
+  margin: 0;
 }
 
 .toast {
