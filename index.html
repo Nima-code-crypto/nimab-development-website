@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nimab Development — Moderna digitala produkter</title>
+  <meta name="description" content="Nimab Development bygger SaaS, webbappar och hemsidor med fokus på kvalitet, tydlighet och skalbarhet. Boka ett möte för att komma igång." />
+
+  <meta property="og:title" content="Nimab Development — Moderna digitala produkter" />
+  <meta property="og:description" content="Premium webbutveckling för SaaS, webbappar och hemsidor. Från idé till lansering." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://example.com/og-image.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="background-grid" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <nav class="navbar">
+      <a class="logo" href="#top" aria-label="Nimab Development hem">Nimab<span>Development</span></a>
+      <button class="nav-toggle" type="button" aria-label="Öppna meny" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" data-nav>
+        <a href="#services">Tjänster</a>
+        <a href="#process">Process</a>
+        <a href="#cases">Case</a>
+        <a href="#about">Om</a>
+        <a href="#contact">Kontakt</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Växla tema">
+        <span class="theme-icon" aria-hidden="true">☾</span>
+        <span class="theme-label">Dark</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="badge">Premium webbutveckling</p>
+          <h1>Nimab Development — byggt för moderna digitala produkter</h1>
+          <p class="lead">Jag bygger SaaS, webbappar och hemsidor med ansvar för hela kedjan — från strategi och design till kod, deploy och långsiktig support.</p>
+          <div class="cta-group">
+            <a class="btn primary" href="#contact">Boka ett möte</a>
+            <a class="btn ghost" href="#services">Se tjänster</a>
+          </div>
+          <div class="hero-highlights">
+            <div>
+              <strong>Snabb start</strong>
+              <span>Från idé till MVP</span>
+            </div>
+            <div>
+              <strong>Fullstack</strong>
+              <span>UI + backend + drift</span>
+            </div>
+            <div>
+              <strong>Trygg leverans</strong>
+              <span>Process & uppföljning</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Teknisk översikt">
+          <div class="panel-header">
+            <span class="status-dot"></span>
+            <p>Deploy status</p>
+          </div>
+          <div class="panel-body">
+            <div class="panel-row">
+              <span>Build</span>
+              <span class="panel-chip">Pass</span>
+            </div>
+            <div class="panel-row">
+              <span>API</span>
+              <span class="panel-chip">v1.2</span>
+            </div>
+            <div class="panel-row">
+              <span>Database</span>
+              <span class="panel-chip">Postgres</span>
+            </div>
+            <div class="panel-row">
+              <span>Support</span>
+              <span class="panel-chip">24/7</span>
+            </div>
+          </div>
+          <p class="panel-note">Teknisk kvalitet + stabil drift.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip section" aria-label="Fördelar">
+      <div class="pill">Snabb leverans</div>
+      <div class="pill">Clean code</div>
+      <div class="pill">Skalbart</div>
+      <div class="pill">Säkerhet</div>
+      <div class="pill">Support</div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-heading">
+        <p class="eyebrow">Tjänster</p>
+        <h2>Allt du behöver för att lansera tryggt</h2>
+        <p>Kort, konkret och fokuserat på leverans. Klicka på en tjänst för mer detaljer.</p>
+      </div>
+      <div class="grid services-grid">
+        <button class="service-card" data-title="SaaS & MVP-utveckling" data-description="Snabb validering av idéer och byggnation av robusta MVP:er." data-bullets="Strategi & scope|Snabb prototyp|Lanseringsklar MVP">
+          <h3>SaaS & MVP-utveckling</h3>
+          <p>Bygg ett första version som säljer och skalar.</p>
+          <ul>
+            <li>Strategi & scope</li>
+            <li>Snabb prototyp</li>
+            <li>Lanseringsklar MVP</li>
+          </ul>
+        </button>
+        <button class="service-card" data-title="Websites & Landing pages" data-description="Säljande webbsidor som laddar snabbt och konverterar." data-bullets="Design + copy|SEO-grund|Responsivt & snabbt">
+          <h3>Websites & Landing pages</h3>
+          <p>Premium känsla för ditt varumärke.</p>
+          <ul>
+            <li>Design + copy</li>
+            <li>SEO-grund</li>
+            <li>Responsivt & snabbt</li>
+          </ul>
+        </button>
+        <button class="service-card" data-title="Frontend (UI, UX, responsivt)" data-description="Gränssnitt som känns proffsiga, tydliga och snabba." data-bullets="Designsystem|Interaktioner|Tillgänglighet">
+          <h3>Frontend (UI, UX, responsivt)</h3>
+          <p>Upplevelse som bygger förtroende.</p>
+          <ul>
+            <li>Designsystem</li>
+            <li>Interaktioner</li>
+            <li>Tillgänglighet</li>
+          </ul>
+        </button>
+        <button class="service-card" data-title="Backend & API" data-description="Stabila integrationer som håller för tillväxt." data-bullets="Node/REST|Integrationer|Autentisering">
+          <h3>Backend & API</h3>
+          <p>Skalbara och säkra backend-lösningar.</p>
+          <ul>
+            <li>Node/REST</li>
+            <li>Integrationer</li>
+            <li>Autentisering</li>
+          </ul>
+        </button>
+        <button class="service-card" data-title="Databaser" data-description="Strukturerade datamodeller som är lätta att bygga vidare på." data-bullets="Postgres/SQL|Prestanda|Dataarkitektur">
+          <h3>Databaser</h3>
+          <p>Rätt struktur från dag ett.</p>
+          <ul>
+            <li>Postgres/SQL</li>
+            <li>Prestanda</li>
+            <li>Dataarkitektur</li>
+          </ul>
+        </button>
+        <button class="service-card" data-title="Cloud & Deploy" data-description="Smidig drift och säkra leveranser." data-bullets="Pipelines|Hosting|Övervakning">
+          <h3>Cloud & Deploy</h3>
+          <p>Trygga releaser utan friktion.</p>
+          <ul>
+            <li>Pipelines</li>
+            <li>Hosting</li>
+            <li>Övervakning</li>
+          </ul>
+        </button>
+        <button class="service-card" data-title="Support & Förvaltning" data-description="Långsiktigt samarbete med fokus på kvalitet." data-bullets="Bugfix|Vidareutveckling|Rådgivning">
+          <h3>Support & Förvaltning</h3>
+          <p>Kontinuerlig förbättring.</p>
+          <ul>
+            <li>Bugfix</li>
+            <li>Vidareutveckling</li>
+            <li>Rådgivning</li>
+          </ul>
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="section-heading">
+        <p class="eyebrow">Process</p>
+        <h2>En tydlig väg till lansering</h2>
+        <p>Fyra steg som håller projektet fokuserat och effektivt.</p>
+      </div>
+      <div class="grid process-grid">
+        <article class="process-card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+          </div>
+          <h3>Discover</h3>
+          <p>Vi definierar mål, scope och vad som skapar affärsnytta.</p>
+        </article>
+        <article class="process-card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2" /><path d="M7 20h10" /></svg>
+          </div>
+          <h3>Build</h3>
+          <p>Design och utveckling med fokus på kvalitet och prestanda.</p>
+        </article>
+        <article class="process-card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+          </div>
+          <h3>Launch</h3>
+          <p>Smidig lansering med stabil drift och uppföljning.</p>
+        </article>
+        <article class="process-card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0" /><path d="M12 7v5l3 3" /></svg>
+          </div>
+          <h3>Improve</h3>
+          <p>Iterera, optimera och bygg vidare på det som fungerar.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="section-heading">
+        <p class="eyebrow">Case</p>
+        <h2>Utvalda exempel delas på förfrågan</h2>
+        <p>Här är några typer av uppdrag och resultat.</p>
+      </div>
+      <div class="grid cases-grid">
+        <article class="case-card">
+          <h3>Fintech-dashboard</h3>
+          <p>+32% snabbare onboarding och tydligare konverteringsflöde.</p>
+          <div class="chips">
+            <span>React UI</span>
+            <span>API</span>
+            <span>Designsystem</span>
+          </div>
+          <a class="text-link" href="#contact">Begär exempel</a>
+        </article>
+        <article class="case-card">
+          <h3>Marketplace MVP</h3>
+          <p>Lanserad på 6 veckor med betalning och adminpanel.</p>
+          <div class="chips">
+            <span>MVP</span>
+            <span>Node</span>
+            <span>Postgres</span>
+          </div>
+          <a class="text-link" href="#contact">Begär exempel</a>
+        </article>
+        <article class="case-card">
+          <h3>Enterprise portal</h3>
+          <p>Trygg inloggning och dashboard för komplexa arbetsflöden.</p>
+          <div class="chips">
+            <span>SSO</span>
+            <span>UX</span>
+            <span>Cloud</span>
+          </div>
+          <a class="text-link" href="#contact">Begär exempel</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="tech">
+      <div class="section-heading">
+        <p class="eyebrow">Tech Stack</p>
+        <h2>Rätt verktyg för rätt problem</h2>
+        <p>Moderna, stabila verktyg som matchar produktens behov.</p>
+      </div>
+      <div class="grid tech-grid">
+        <div class="tech-card">HTML/CSS/JS</div>
+        <div class="tech-card">Node</div>
+        <div class="tech-card">Postgres</div>
+        <div class="tech-card">REST APIs</div>
+        <div class="tech-card">Git</div>
+        <div class="tech-card">Cloud/Deploy</div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">Om Nimab Development</p>
+        <h2>Kvalitet, tydlighet och långsiktighet</h2>
+        <p>Jag hjälper team och företag att bygga stabila digitala produkter med fokus på affärsnytta och teknisk kvalitet.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Vem jag är</h3>
+          <p>Senior frontend-utvecklare som tar helhetsansvar och säkerställer att varje detalj fungerar.</p>
+        </div>
+        <div class="about-card">
+          <h3>Varför Nimab Development</h3>
+          <p>Tydlig kommunikation, proaktivt ansvar och lösningar som håller över tid.</p>
+        </div>
+        <div class="about-highlights">
+          <span>Kommunikation</span>
+          <span>Ansvar</span>
+          <span>Skalbarhet</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-heading">
+        <p class="eyebrow">Kontakt</p>
+        <h2>Redo att starta?</h2>
+        <p>Skicka en kort beskrivning så återkommer jag med nästa steg.</p>
+      </div>
+      <div class="contact-grid">
+        <form class="contact-form" id="contactForm">
+          <label>
+            Namn
+            <input type="text" name="name" placeholder="Ditt namn" required />
+          </label>
+          <label>
+            E-post
+            <input type="email" name="email" placeholder="namn@företag.se" required />
+          </label>
+          <label>
+            Typ av projekt
+            <select name="type" required>
+              <option value="SaaS/MVP">SaaS / MVP</option>
+              <option value="Webbplats">Webbplats</option>
+              <option value="Frontend">Frontend / UI</option>
+              <option value="Backend/API">Backend / API</option>
+              <option value="Support">Support / Förvaltning</option>
+            </select>
+          </label>
+          <label>
+            Meddelande
+            <textarea name="message" rows="4" placeholder="Berätta kort om målet, timeline och budget."></textarea>
+          </label>
+          <button class="btn primary" type="submit">Skicka förfrågan</button>
+          <p class="form-note">Svar inom 24–48h.</p>
+        </form>
+        <div class="contact-info">
+          <h3>Alternativa vägar</h3>
+          <p>Vill du prata direkt? Välj kanal nedan.</p>
+          <div class="contact-links">
+            <a class="btn ghost" href="mailto:hello@nimab.dev">Email</a>
+            <a class="btn ghost" href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn ghost" href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Nimab Development</strong>
+      <p>Premium webbutveckling för moderna produkter.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#services">Tjänster</a>
+      <a href="#process">Process</a>
+      <a href="#cases">Case</a>
+      <a href="#contact">Kontakt</a>
+    </div>
+    <div class="footer-meta">© <span id="year"></span> Nimab Development</div>
+  </footer>
+
+  <div class="modal" id="serviceModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content" role="document">
+      <button class="modal-close" type="button" aria-label="Stäng">×</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+      <ul id="modalList"></ul>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
