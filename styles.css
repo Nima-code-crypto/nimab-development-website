@@ -251,20 +251,20 @@ p {
 
 .logo-img {
   display: block;
-  height: 32px;
+  height: 46px;
   width: auto;
   object-fit: contain;
 }
 
 .hero-logo {
   display: block;
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
   line-height: 0;
 }
 
 .hero-logo-img {
   display: block;
-  max-height: 56px;
+  max-height: 128px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -701,17 +701,17 @@ button:focus {
   }
 
   .hero-logo-img {
-    max-height: 72px;
+    max-height: 168px;
   }
 }
 
 @media (max-width: 480px) {
   .logo-img {
-    height: 28px;
+    height: 38px;
   }
 
   .hero-logo-img {
-    max-height: 48px;
+    max-height: 88px;
   }
 }
 
